@@ -1,5 +1,6 @@
 
 import searchRepository from './repository/SearchRepository';
+import pollingRepository from './repository/PollingRepository';
 import {WEATHER_FETCH_SUCCESS } from  '../constants/Constants'
 
 
@@ -9,14 +10,18 @@ export function SearchAction( searchValue) {
 
     return (dispatch) => {
 
-        searchRepository.search( searchValue, (success, newState) => {
-            if (success) {
-                dispatch({ type: WEATHER_FETCH_SUCCESS
-                         , newState });
-            } else {
+            pollingRepository.poll(  (success, newState) => {
+                console.log(newState.data)
+            });
 
-            }
-        });
+//        searchRepository.search( searchValue, (success, newState) => {
+//            if (success) {
+//                dispatch({ type: WEATHER_FETCH_SUCCESS
+//                         , newState });
+//            } else {
+//
+//            }
+//        });
 
     }
 }

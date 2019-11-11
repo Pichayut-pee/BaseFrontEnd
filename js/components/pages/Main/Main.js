@@ -25,6 +25,15 @@ class Main extends Component {
         this.handleInputSearch = this.handleInputSearch.bind(this);
     }
 
+    componentDidMount() {
+                   this.props.dispatchSearchWeather(this.state.inputValue);
+                    this.dataPolling = setInterval(
+                        () => {
+                            this.props.dispatchSearchWeather();
+                        },
+                        5000);
+                }
+
     componentDidUpdate(prevProps) {
 
 
@@ -67,9 +76,6 @@ class Main extends Component {
                 </table>
                 }
             </div>
-
-
-
         )
     }
 

@@ -29,6 +29,7 @@ import App from './components/App.react';
 // Import the CSS file, which webpack transfers to the build folder
 import '../css/main.css';
 import MainPage from "./components/pages/Main/Main";
+import Notification from "./components/pages/WebSocket/Notification";
 
 //Check for ServiceWorker support before trying to install it
 if ('serviceWorker' in navigator) {
@@ -76,6 +77,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route component={App}>
           <Route path="/" component={MainPage} />
+          <Route path="/ws" component={Notification} />
       </Route>
     </Router>
   </Provider>,

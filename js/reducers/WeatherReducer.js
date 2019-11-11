@@ -10,7 +10,7 @@
  *   });
  */
 
-import { WEATHER_FETCH_SUCCESS } from '../constants/Constants';
+import { WEATHER_FETCH_SUCCESS, WEATHER_FETCH_FAIL } from '../constants/Constants';
 // Object.assign is not yet fully supported in all browsers, so we fallback to
 // a polyfill
 const assign = Object.assign || require('object.assign');
